@@ -1,0 +1,80 @@
+.signup-btn {
+  width: 20% !important;
+  margin: 0 auto;
+}
+.Award-ul li {
+  padding: 0.5rem;
+}
+.Awards-h1 {
+  margin-top: 5rem !important;
+}
+/* stats */
+.ecosystem-img {
+  width: 90%;
+}
+.stats-a a {
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Pricing */
+.Pricing {
+  margin-top: 8rem;
+}
+.Pricing .border h1 {
+  padding-bottom: 1rem;
+}
+/* Education */
+.Education div div img {
+  width: 80%;
+}
+/* footer */
+.logo-img {
+  width: 65%;
+}
+.Footer {
+  background-color: rgb(244, 244, 244);
+}
+/* navbar */
+nav {
+  background-color: #ffffff !important;
+}
+nav a img {
+  width: 25%;
+}
+nav ul li {
+  padding-left: 2rem;
+}
+nav .nav-link {
+  color: rgb(0, 0, 0) !important;
+}
+.NotFound {
+  height: 100vh;
+}
+.NotFound h1 {
+  text-align: center;
+  margin-top: 30vh;
+}
+.rainmatter {
+  text-decoration: none;
+}
+/* Aboutpage */
+.nithinKamath {
+  border-radius: 100%;
+  width: 50%;
+}
+/* Product-page */
+.googleplay {
+  width: 95%;
+}
+.Appstore {
+  width: 90%;
+}
+
+/* SUPPORT */
+.SUPPORT_INPUT {
+  height: 70px;
+  width: 520px;
+  border-radius: 10px;
+  border: none;
+  padding:30px;
+}
