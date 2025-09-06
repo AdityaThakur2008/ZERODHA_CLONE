@@ -9,65 +9,118 @@ function Funds() {
         <button className="btn">Withdraw</button>
       </div>
       <h1 className="title">Equity</h1>
-      <div className="table">
-        <div className="data">
-          <p>vailable margin</p>
+      <div className="funds-inner">
+        <div className="table">
+          <div className="data">
+            <div>
+              <p>vailable margin</p>
+              <p>
+                 4,043.10
+              </p>
+            </div>
 
-          <p className="imp"> 4,043.10</p>
+            <div>
+              {" "}
+              <p>Used margin</p>
+              <p>
+                3,757.30
+              </p>
+            </div>
 
-          <p>Used margin</p>
+            <div>
+              <p>Available cash</p>
+              <p>
+                 4,043.10
+              </p>
+            </div>
+          </div>
 
-          <p className="imp"> 3,757.30</p>
+          <div className="data">
+            <div>
+              {" "}
+              <p>Opening Balance</p>
+              <p>
+                 4,043.10
+              </p>
+            </div>
 
-          <p>Available cash</p>
+            <div>
+              <p>Opening Balance</p>
+              <p>
+                 3736.40
+              </p>
+            </div>
 
-          <p className="imp"> 4,043.10</p>
+            <div>
+              {" "}
+              <p>Payin</p>
+              <p>
+                 4064.00
+              </p>
+            </div>
+
+            <div>
+              {" "}
+              <p>SPAN</p>
+              <p>
+                 0.00
+              </p>
+            </div>
+
+            <div>
+              {" "}
+              <p>Delivery margin</p>
+              <p>
+                {" "}
+                 0.00
+              </p>
+            </div>
+
+            <div>
+              {" "}
+              <p>Exposure</p>
+              <p>
+                 0.00
+              </p>
+            </div>
+
+            <div>
+              {" "}
+              <p>Options premium</p>
+              <p>
+                {" "}
+                 0.00
+              </p>
+            </div>
+          </div>
+
+          <div className="data">
+            <div>
+              {" "}
+              <p>Collateral (Liquid funds)</p>
+              <p>
+                 0.00
+              </p>
+            </div>
+
+            <div>
+              <p>Collateral (Equity)</p>
+              <p>
+                {" "}
+                 0.00
+              </p>
+            </div>
+
+            <div>
+              {" "}
+              <p>Total Collateral</p>
+              <p>
+                 0.00
+              </p>
+            </div>
+          </div>
         </div>
-
-        <div className="data">
-          <p>Opening Balance</p>
-
-          <p className="imp"> 4,043.10</p>
-
-          <p>Opening Balance</p>
-
-          <p className="imp"> 3736.40</p>
-
-          <p>Payin</p>
-
-          <p className="imp"> 4064.00</p>
-
-          <p>SPAN</p>
-
-          <p className="imp"> 0.00</p>
-
-          <p>Delivery margin</p>
-
-          <p className="imp"> 0.00</p>
-
-          <p>Exposure</p>
-
-          <p className="imp"> 0.00</p>
-
-          <p>Options premium</p>
-
-          <p className="imp"> 0.00</p>
-        </div>
-
-        <div className="data">
-          <p>Collateral (Liquid funds)</p>
-
-          <p className="imp"> 0.00</p>
-
-          <p>Collateral (Equity)</p>
-
-          <p className="imp"> 0.00</p>
-
-          <p>Total Collateral</p>
-
-          <p className="imp"> 0.00</p>
-        </div>
-        <div>
+        <div className="open-account">
           <p>You don't have a commodity account</p>
           <button className="btn">Open Account</button>
         </div>

@@ -1,9 +1,9 @@
 import React from "react";
-
+import { positions } from "../data/data";
 function Positions() {
   return (
     <>
-      <h1 className="title">Positions (2)</h1>
+      <h1 className="title">Positions ({positions.length})</h1>
       <div className="table-order">
         <table>
           <tr>
@@ -15,24 +15,28 @@ function Positions() {
             <th>P&L</th>
             <th>Chg.</th>
           </tr>
-          <tr>
-            <td>CNC</td>
-            <td>EVEREADY</td>
-            <td>2</td>
-            <td>316.27</td>
-            <td>312.35</td>
-            <td>-7.84</td>
-            <td>-1.24%</td>
-          </tr>
-          <tr>
-            <td>CNC</td>
-            <td>JUBLFOOD</td>
-            <td>1</td>
-            <td>3124.75</td>
-            <td>3082.65</td>
-            <td>-42.10</td>
-            <td>-1.35%</td>
-          </tr>
+          {positions.map((stock, index) => {
+            const currVal = stock.qty * stock.price;
+            const isProfit = currVal - stock.avg * stock.qty >= 0;
+            const profitClass = isProfit ? "profit" : "loss";
+            const dayClass = stock.isLoss ? "loss" : "profit";
+
+            return (
+              <tr key={index}>
+                <td>{stock.product}</td>
+                <td>{stock.name}</td>
+                <td>{stock.qty}</td>
+                <td>{stock.avg}</td>
+                <td>{stock.price}</td>
+
+                <td className={profitClass}>
+                  {(currVal - stock.avg * stock.qty).toFixed(2)}
+                </td>
+
+                <td className={dayClass}>{stock.day}</td>
+              </tr>
+            );
+          })}
         </table>
       </div>
     </>

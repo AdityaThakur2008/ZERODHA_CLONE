@@ -1,9 +1,10 @@
 import React from "react";
+import { holdings } from "../data/data";
 
 function Holdings() {
   return (
     <>
-      <h1 className="title">Holdings (0)</h1>
+      <h1 className="title">Holdings ({holdings.length})</h1>
       <div className="table-order">
         <table>
           <tr>
@@ -16,6 +17,27 @@ function Holdings() {
             <th>Net chg.</th>
             <th>Day chg.</th>
           </tr>
+          {holdings.map((stock, index) => {
+            const currVal = stock.qty * stock.price;
+            const isProfit = currVal - stock.avg * stock.qty >= 0;
+            const profitClass = isProfit ? "profit" : "loss";
+            const dayClass = stock.isLoss ? "loss" : "profit";
+
+            return (
+              <tr key={index}>
+                <td>{stock.name}</td>
+                <td>{stock.qty}</td>
+                <td>{stock.avg}</td>
+                <td>{stock.price}</td>
+                <td>{currVal.toFixed(2)}</td>
+                <td className={profitClass}>
+                  {(currVal - stock.avg * stock.qty).toFixed(2)}
+                </td>
+                <td className={profitClass}>{stock.net}</td>
+                <td className={dayClass}>{stock.day}</td>
+              </tr>
+            );
+          })}
         </table>
       </div>
       <div className="row">
