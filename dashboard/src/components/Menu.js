@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import api from "../api.js"
 
 function Menu() {
   const [selectedMenu, SetselectedMenu] = useState(0);
 
   const handleMenuClick = (index) => {
     SetselectedMenu(index);
+  };
+  const handleLogOut = async () => {
+    try {
+      await api.post("/LOGOUT");
+      
+    } catch (err) {
+      console.error(err);
+    }
   };
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
@@ -92,9 +101,15 @@ function Menu() {
           </li>
         </ul>
         <hr />
-        <div className="profile">
+        <div className="profile dropdown">
           <div className="avtar">ZU</div>
           <p className="username">USER ID</p>
+
+          <div class="dropdown-content">
+            <button>Profile</button>
+            <button>About</button>
+            <button onClick={handleLogOut}>Log Out</button>
+          </div>
         </div>
       </div>
     </div>

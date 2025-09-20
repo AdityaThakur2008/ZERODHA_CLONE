@@ -3,11 +3,44 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const router = require("express").Router();
 
-const { PositionModel } = require("./model/Positionmodel");
+const { OrdersModel } = require("./model/OrdersModel");
+const { Login, Signup, Logout } = require("./controllers/AutheController");
+const {
+  allholdings,
+  allPositions,
+  AllOrders,
+} = require("./controllers/AllHoldings");
+
+const { verifyToken } = require("./middleware/verifyToken");
 
 const PORT = process.env.PORT || 3002;
 const DB_URL = process.env.MONGO_URL;
+
+const allowedOrigins = [
+  "http://localhost:3000", // Signup/Login frontend
+  "http://localhost:3001", // Dashboard frontend
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
+
+app.use(bodyParser.json());
+app.use(cookieParser());
 
 main().catch((err) => console.log(err));
 
@@ -15,48 +48,38 @@ async function main() {
   await mongoose.connect(DB_URL);
   console.log("db Connected");
 }
-// app.get("/addHoldings", async (req, res) => {
-//   let tempHoldings = [
-//     {
-//       product: "CNC",
-//       name: "EVEREADY",
-//       qty: 2,
-//       avg: 316.27,
-//       price: 312.35,
-//       net: "+0.58%",
-//       day: "-1.24%",
-//       isLoss: true,
-//     },
-//     {
-//       product: "CNC",
-//       name: "JUBLFOOD",
-//       qty: 1,
-//       avg: 3124.75,
-//       price: 3082.65,
-//       net: "+10.04%",
-//       day: "-1.35%",
-//       isLoss: true,
-//     },
-//   ];
-//   tempHoldings.forEach((item) => {
-//     let newHoldingsModel = new PositionModel({
-//       product: item.product,
-//       name: item.name,
-//       qty: item.qty,
-//       avg: item.avg,
-//       price: item.price,
-//       net: item.net,
-//       day: item.day,
-//       isLoss: item.isLoss,
-//     });
-//     newHoldingsModel.save();
-//   });
-//   res.send("Done !");
-// });
 
-app.get("/", (req, res) => {
-  res.send("done");
+// /signup
+router.post("/signup", Signup);
+
+// login
+router.post("/login", Login);
+
+//logout
+router.post("/logout", Logout);
+
+// routes
+app.use("/", router);
+
+router.get("/allHoldings", verifyToken, allholdings);
+
+router.get("/allPosition", verifyToken, allPositions);
+
+router.get("/oders", verifyToken, AllOrders);
+
+app.post("/addorder", verifyToken, async (req, res) => {
+  let newOrder = new OrdersModel({
+    name: req.body.name,
+    qty: req.body.qty,
+    price: req.body.price,
+    mode: req.body.mode,
+    UserID: req.user.id,
+  });
+
+  newOrder.save();
+  res.send("order Saved");
 });
+
 app.listen(PORT, () => {
-  console.log("app Started");
+  console.log("app Started", PORT);
 });

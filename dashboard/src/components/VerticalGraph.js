@@ -1,7 +1,38 @@
 import React from "react";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 
-function VerticalGraph() {
-  return <h1>VerticalGraph</h1>;
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top",
+    },
+    title: {
+      display: true,
+      text: "Chart.js Bar Chart",
+    },
+  },
+};
+
+export function Verticalchart({ data }) {
+  const safeData = data || { labels: [], datasets: [] };
+  return <Bar options={options} data={safeData} />;
 }
-
-export default VerticalGraph;

@@ -1,9 +1,19 @@
-import React from "react";
-import { positions } from "../data/data";
+import React, { useEffect, useState } from "react";
+
+import api from "../api";
 function Positions() {
+  const [allPosition, setallPosiition] = useState([]);
+
+  useEffect(() => {
+    api
+      .get("allPosition", { withCredentials: true })
+      .then((res) => {
+        setallPosiition(res.data);
+      });
+  }, []);
   return (
     <>
-      <h1 className="title">Positions ({positions.length})</h1>
+      <h1 className="title">Positions ({allPosition.length})</h1>
       <div className="table-order">
         <table>
           <tr>
@@ -15,7 +25,7 @@ function Positions() {
             <th>P&L</th>
             <th>Chg.</th>
           </tr>
-          {positions.map((stock, index) => {
+          {allPosition.map((stock, index) => {
             const currVal = stock.qty * stock.price;
             const isProfit = currVal - stock.avg * stock.qty >= 0;
             const profitClass = isProfit ? "profit" : "loss";

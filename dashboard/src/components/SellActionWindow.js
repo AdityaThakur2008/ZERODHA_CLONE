@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
-import api from "../api";
+import axios from "axios";
 
 import GeneralContext from "./GeneralContext";
 
@@ -13,22 +13,22 @@ const BuyActionWindow = ({ uid }) => {
 
   const generalCtx = useContext(GeneralContext);
 
-  const handleBuyClick = () => {
+  const handleSellClick = () => {
     try {
-      api.post("/addorder", {
+      axios.post("http://localhost:3002/addorder", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice,
-        mode: "BUY",
+        mode: "SELL",
       });
     } catch (err) {
       console.error(err);
     }
-    generalCtx.closeBuyWindow();
+    generalCtx.closeSellWindow();
   };
 
   const handleCancelClick = () => {
-    generalCtx.closeBuyWindow();
+    generalCtx.closeSellWindow();
   };
 
   return (
@@ -63,8 +63,8 @@ const BuyActionWindow = ({ uid }) => {
         <div className="buttons">
           <span>Margin required ₹140.65</span>
           <div>
-            <Link className="btn btn-blue" onClick={handleBuyClick}>
-              Buy
+            <Link className="btn btn-red" onClick={handleSellClick}>
+              Sell
             </Link>
             <Link className="btn btn-grey" onClick={handleCancelClick}>
               Cancel

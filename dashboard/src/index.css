@@ -501,7 +501,42 @@ code {
   height: 35px;
   border-radius: 10px;
 }
-.btn-watchlist:hover{
+.btn-watchlist:hover {
   opacity: 0.7;
-  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  margin-top: 50px;
+  background-color: #f9f9f9;
+  min-width: 8%;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content button {
+  border: none;
+  width: 100%;
+  text-align: start;
+  color: black;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.dropdown-content button:hover {
+  background-color: #d6d6d6;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

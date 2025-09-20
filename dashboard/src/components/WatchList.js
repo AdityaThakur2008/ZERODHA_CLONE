@@ -1,10 +1,12 @@
-import React, { use, useState } from "react";
+import React, { use, useState, useContext } from "react";
 import { Tooltip, Grow } from "@mui/material";
 import { watchlist } from "../data/data";
 import KeyboardControlKeyIcon from "@mui/icons-material/KeyboardControlKey";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import BarChartOutlined from "@mui/icons-material/BarChartOutlined";
 import MoreHoriz from "@mui/icons-material/MoreHoriz";
+import GeneralContext from "./GeneralContext";
+import { DoughnutChart } from "./DoughnoutChart";
 
 function WatchList() {
   return (
@@ -24,6 +26,7 @@ function WatchList() {
           return <WatchListItem stock={stock} key={index} />;
         })}
       </ul>
+      <DoughnutChart />
     </div>
   );
 }
@@ -58,23 +61,33 @@ const WatchListItem = ({ stock }) => {
             </p>
           </div>
         </div>
-        
         {showWatchListAction && <WatchListAction uid={stock.name} />}{" "}
       </div>
     </li>
   );
 };
 const WatchListAction = ({ uid }) => {
+  const generalContext = useContext(GeneralContext);
+  const handleBuyClick = () => {
+    generalContext.openBuyWindow(uid);
+  };
+  const handleSellClick = () => {
+    generalContext.openSellWindow(uid);
+  };
   return (
     <span className="actions">
       <span>
         <Tooltip title="Buy (B)">
-          <button className="btn-watchlist buy">Buy</button>
+          <button className="btn-watchlist buy " onClick={handleBuyClick}>
+            Buy
+          </button>
         </Tooltip>
       </span>
       <span>
         <Tooltip title="Sell (S)">
-          <button className=" btn-watchlist sell">Sell</button>
+          <button className=" btn-watchlist sell" onClick={handleSellClick}>
+            Sell
+          </button>
         </Tooltip>
       </span>
       <span>
