@@ -9,7 +9,8 @@ const ProtectedRoute = ({ children }) => {
 
   if (!token) {
     // token missing → redirect login page
-    window.location.href = "http://localhost:3001/signup"; // frontend login page
+    window.location.href =
+      "https://zerodha-clone-frontend-vb0o.onrender.com/signup"; // frontend login page
     return null; // kuch render mat karo
   }
 
