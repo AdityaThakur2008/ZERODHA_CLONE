@@ -22,7 +22,7 @@ function Signup() {
         const res = await api.post(
           "/signup",
           {
-            username: formData.name, // backend me username expected hai
+            username: formData.name, 
             email: formData.email,
             password: formData.password,
           },
