@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import ProtectedRoute from "./ProtecteRoute.js";
 
 function Navbar() {
   return (
@@ -47,18 +47,19 @@ function Navbar() {
                 Support
               </Link>
             </li>
-
-            <li className="nav-item">
-              {" "}
-              <button
-                className="nav-link"
-                onClick={() => {
-                  window.location.href =
-                    "https://zerodha-clone-dashboard-u9rv.onrender.com";
-                }}>
-                Dashboard
-              </button>
-            </li>
+            <ProtectedRoute>
+              <li className="nav-item">
+                {" "}
+                <button
+                  className="nav-link"
+                  onClick={() => {
+                    window.location.href =
+                      "https://zerodha-clone-dashboard-u9rv.onrender.com";
+                  }}>
+                  Dashboard
+                </button>
+              </li>
+            </ProtectedRoute>
           </ul>
         </div>
       </div>
