@@ -1,6 +1,6 @@
 import axios from "axios";
 
-console.log("Backend URL:", process.env.REACT_APP_BACKEND); // debug
+
 
 const API_URL = process.env.REACT_APP_BACKEND;
 
