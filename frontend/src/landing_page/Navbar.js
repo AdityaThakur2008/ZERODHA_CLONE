@@ -54,7 +54,7 @@ function Navbar() {
                 className="nav-link"
                 onClick={() => {
                   axios.get(
-                    "https://zerodha-clone-dashboard-u9rv.onrender.com/dashboard"
+                    "https://zerodha-clone-dashboard-u9rv.onrender.com"
                   );
                 }}>
                 Dashboard
