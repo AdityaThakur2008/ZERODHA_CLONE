@@ -8,9 +8,8 @@ const ProtectedRoute = ({ children }) => {
     .find((c) => c.trim().startsWith("token="));
 
   if (!token) {
-    // token missing → redirect login page
-    window.location.href =
-      "https://zerodha-clone-frontend-vb0o.onrender.com/signup"; // frontend login page
+ 
+   
     return null; // kuch render mat karo
   }
 

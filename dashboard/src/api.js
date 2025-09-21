@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.BACKEND,
+  baseURL: "https://zerodha-clone-1-m3wh.onrender.com",
   withCredentials: true,
 });
 
