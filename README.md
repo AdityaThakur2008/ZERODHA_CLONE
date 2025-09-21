@@ -67,5 +67,9 @@ npm start
 
 ```
 
+### LIVE URL
+- FRONTEND = https://zerodha-clone-frontend-vb0o.onrender.com
+- BACKEND = https://zerodha-clone-1-m3wh.onrender.com
+- DASHBOARD = https://zerodha-clone-dashboard-u9rv.onrender.com //DASHBOARD is protected first login bhi frontend then check dashboard
 
     
