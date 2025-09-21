@@ -6,7 +6,10 @@ function Footer() {
       <div className=" border-top container mt-5">
         <div className="row mt-5">
           <div className="col">
-            <img className="logo-img" src="media/images/logo.svg"></img>
+            <img
+              className="logo-img"
+              src="media/images/logo.svg"
+              alt="Company Logo"></img>
             <p>
               © 2010 - 2024, Not Zerodha Broking <br />
               Ltd. All rights reserved.
@@ -14,73 +17,73 @@ function Footer() {
           </div>
           <div className="col ">
             <p className="mb-5">Company</p>
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               About{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Products{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted ">
+            <a href="#" className="text-decoration-none text-muted ">
               Pricing{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted ">
+            <a href="#" className="text-decoration-none text-muted ">
               Referral programme{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Careers{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Zerodha.tech{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Press & media{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Zerodha cares (CSR){" "}
             </a>
             <br />
           </div>
           <div className="col">
             <p className="mb-5">Support</p>
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Contact{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Support portal{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted ">
+            <a href="#" className="text-decoration-none text-muted ">
               Z-Connect blog{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted ">
+            <a href="#" className="text-decoration-none text-muted ">
               List of charges
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Downloads & resources{" "}
             </a>
             <br />
           </div>
           <div className="col">
             <p className="mb-5">Account</p>
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Open an account{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               Fund transfer{" "}
             </a>
             <br />
-            <a href="" className="text-decoration-none text-muted small">
+            <a href="#" className="text-decoration-none text-muted small">
               60 day challenge{" "}
             </a>
             <br />

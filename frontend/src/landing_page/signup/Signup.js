@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
+
+import api from "../../api";
 
 function Signup() {
   const [isSignup, setIsSignup] = useState(true);
@@ -18,8 +19,8 @@ function Signup() {
     try {
       if (isSignup) {
         // Signup request
-        const res = await axios.post(
-          "http://localhost:3002/signup",
+        const res = await api.post(
+          "/signup",
           {
             username: formData.name, // backend me username expected hai
             email: formData.email,
@@ -30,8 +31,8 @@ function Signup() {
         alert(res.data.message);
       } else {
         // Login request
-        const res = await axios.post(
-          "http://localhost:3002/login",
+        const res = await api.post(
+          "/login",
           {
             email: formData.email,
             password: formData.password,

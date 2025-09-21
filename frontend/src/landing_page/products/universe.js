@@ -6,7 +6,7 @@ function Unverse() {
       <div className="mb-5">
         <h1 className="h4 text-center text-muted fw-normal">
           Want to know more about our technology stack? Check out the{" "}
-          <a href="" className="text-decoration-none">
+          <a href="#" className="text-decoration-none">
             Zerodha.tech
           </a>{" "}
           blog.
@@ -22,6 +22,7 @@ function Unverse() {
       <div className="row text-center mt-5 p-5">
         <div className=" col">
           <img
+            alt="img"
             src="./media/images/zerodhaFundhouse.png"
             className="mb-4"
             style={{ width: "60%" }}></img>
@@ -32,6 +33,7 @@ function Unverse() {
         </div>
         <div className="col">
           <img
+            alt="img"
             src="./media/images/sensibullLogo.svg"
             className="mb-4"
             style={{ width: "60%" }}></img>
@@ -43,6 +45,7 @@ function Unverse() {
         </div>
         <div className=" col">
           <img
+            alt="img"
             src="./media/images/goldenpiLogo.png"
             className="mb-4"
             style={{ width: "60%" }}></img>
@@ -53,8 +56,9 @@ function Unverse() {
         </div>
       </div>
       <div className="row text-center mt-5 p-5">
-        <div className="col" >
+        <div className="col">
           <img
+            alt="img"
             src="./media/images/streakLogo.png"
             className="mb-4"
             style={{ width: "30%" }}></img>
@@ -65,6 +69,7 @@ function Unverse() {
         </div>
         <div className="col">
           <img
+            alt="img"
             src="./media/images/smallcaseLogo.png"
             className="mb-4"
             style={{ width: "60%" }}></img>
@@ -75,6 +80,7 @@ function Unverse() {
         </div>
         <div className="col m-4">
           <img
+            alt="img"
             src="./media/images/dittoLogo.png "
             className="mb-4"
             style={{ width: "30%" }}></img>
@@ -85,7 +91,7 @@ function Unverse() {
         </div>
       </div>
       <div className="text-center">
-         <button className="btn btn-primary p-2 fs-5 signup-btn">
+        <button className="btn btn-primary p-2 fs-5 signup-btn">
           Sign up for free
         </button>
       </div>

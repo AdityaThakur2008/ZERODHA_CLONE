@@ -30,15 +30,16 @@ function Stats() {
         </div>
         <div className="col-5 stats-a ">
           <img
+            alt="ecosystem Logo"
             src="media\images\ecosystem.png "
             className="mt-5 ecosystem-img"></img>
           <div className="row mx-3 mt-3 stats-a">
             {" "}
-            <a className="col">
+            <a href="#" className="col">
               Explore our products{" "}
               <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
-            <a className="col mb-5" >
+            <a href="#" className="col mb-5">
               Try Kite demo{" "}
               <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>

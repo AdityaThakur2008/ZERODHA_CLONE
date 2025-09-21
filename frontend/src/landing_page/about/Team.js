@@ -9,6 +9,7 @@ function Team() {
           <img
             src="./media/images/nithinKamath.jpg"
             className="nithinKamath ms-5 "
+            alt="Company Logo"
           />
           <div className="ms-5 mt-3">
             <h2>Nithin Kamath</h2>

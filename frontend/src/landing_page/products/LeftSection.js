@@ -1,11 +1,21 @@
 import React from "react";
 
-function LeftSection({ image, title, description, learMoreLink, tryDemoLink,learMoreLinkName,tryDemoLinkName , googlePlay,appStore  }) {
+function LeftSection({
+  image,
+  title,
+  description,
+  learMoreLink,
+  tryDemoLink,
+  learMoreLinkName,
+  tryDemoLinkName,
+  googlePlay,
+  appStore,
+}) {
   return (
     <div className="container  mt-5 left-section pb-5">
       <div className="row  ">
         <div className="col p-5 mt-4">
-          <img src={image} />
+          <img alt="img" src={image} />
         </div>
         <div className="col m-5 p-5">
           <h1 className="h3 ">{title}</h1>
@@ -21,12 +31,14 @@ function LeftSection({ image, title, description, learMoreLink, tryDemoLink,lear
           <div className="row">
             <a href={googlePlay} className="col">
               <img
+                alt="img"
                 src="./media/images/googlePlayBadge.svg"
                 className="googleplay mt-5"
               />
             </a>
             <a href={appStore} className="col mb-5">
               <img
+                alt="img"
                 src="./media/images/appstoreBadge.svg"
                 className="Appstore mt-5"
               />

@@ -22,8 +22,8 @@ const PORT = process.env.PORT || 3002;
 const DB_URL = process.env.MONGO_URL;
 
 const allowedOrigins = [
-  "http://localhost:3000", // Signup/Login frontend
-  "http://localhost:3001", // Dashboard frontend
+  process.env.FRONTEND, // Signup/Login frontend
+  process.env.DASHBOARD, // Dashboard frontend
 ];
 
 app.use(

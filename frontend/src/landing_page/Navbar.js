@@ -4,56 +4,58 @@ import axios from "axios";
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg  border-bottom">
+    <nav className="navbar navbar-expand-lg  border-bottom">
       <div className="container p-2">
-        <Link class="navbar-brand" to="/">
-          <img src="media/images/logo.svg"></img>
+        <Link className="navbar-brand" to="/">
+          <img src="media/images/logo.svg" alt="Company Logo"></img>
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-              <Link class="nav-link" to="/signup">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item ">
+              <Link className="nav-link" to="/signup">
                 Signup
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/about">
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/product">
+            <li className="nav-item">
+              <Link className="nav-link" to="/product">
                 Product
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/pricing">
+            <li className="nav-item">
+              <Link className="nav-link" to="/pricing">
                 Pricing
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/support">
+            <li className="nav-item">
+              <Link className="nav-link" to="/support">
                 Support
               </Link>
             </li>
 
-            <li class="nav-item">
+            <li className="nav-item">
               {" "}
               <button
-                class="nav-link"
+                className="nav-link"
                 onClick={() => {
-                  axios.get("/dashboard");
+                  axios.get(
+                    "https://zerodha-clone-dashboard-u9rv.onrender.com/dashboard"
+                  );
                 }}>
                 Dashboard
               </button>
