@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Home from "./components/Home";
-import ProtectedRoute from "./components/ProtectedRoute";
+
 import { GeneralContextProvider } from "./components/GeneralContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -12,7 +12,7 @@ root.render(
     <GeneralContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/*" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </GeneralContextProvider>
