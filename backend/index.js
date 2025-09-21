@@ -22,8 +22,8 @@ const PORT = process.env.PORT || 3002;
 const DB_URL = process.env.MONGO_URL;
 
 const allowedOrigins = [
-  process.env.FRONTEND || "https://zerodha-clone-frontend-vb0o.onrender.com",
-  process.env.DASHBOARD || "https://zerodha-clone-dashboard.onrender.com",
+  "https://zerodha-clone-frontend-vb0o.onrender.com",
+  "https://zerodha-clone-dashboard-u9rv.onrender.com",
 ];
 
 app.use(
